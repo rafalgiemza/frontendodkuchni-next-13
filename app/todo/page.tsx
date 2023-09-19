@@ -3,6 +3,14 @@ import Link from 'next/link'
 import prisma from './db'
 import TodoItem from './_components/TodoItem'
 
+interface TodoItem { 
+  id: string,
+  title: string,
+  complete: boolean,
+  createdAt: Date,
+  updatedAt: Date
+}
+
 function getTodos() {
   return prisma.todo.findMany()
 }
@@ -13,7 +21,7 @@ async function toggleTodo(id: string, complete: boolean) {
 }
 
 export default async function Home() {
-  const todos = await getTodos()
+  const todos: TodoItem[] = await getTodos()
 
   return (
     <main >
