@@ -1,7 +1,6 @@
 import Header from '@/components/Header'
 import HomeCard from '@/components/HomeCard'
 
-
 export default function Home() {
   return (
     <main className='p-24'>
